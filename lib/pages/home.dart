@@ -59,7 +59,6 @@ class HomePage extends StatelessWidget {
       return Container(
         height: size.height * 0.05,
         margin: EdgeInsets.symmetric(
-          vertical: 0,
           horizontal: 24,
         ),
         child: Column(
@@ -86,10 +85,8 @@ class HomePage extends StatelessWidget {
       return Container(
         margin: EdgeInsets.symmetric(
           horizontal: 24,
-          vertical: 18,
         ),
         height: size.height * 0.3,
-        color: Colors.yellow,
         child: Column(
           children: [
             Row(
@@ -104,6 +101,14 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
                       child: Center(
                         child: Column(
@@ -118,6 +123,9 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 12,
                     ),
                     Text(
                       'Top Up',
@@ -139,23 +147,257 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
-                      child: Center(
+                      child: GestureDetector(
                         child: Column(
                           children: [
                             Container(
                               height: 34,
                               width: 34,
                               child: Image.asset(
-                                'assets/top_up.png',
+                                'assets/transfer.png',
                               ),
                             ),
                           ],
                         ),
+                        onTap: () {
+                          showModalBottomSheet<void>(
+                            context: context,
+                            backgroundColor: Colors.transparent,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: size.height * 0.5,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(25),
+                                    topRight: Radius.circular(25),
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsets.symmetric(
+                                          horizontal: 30,
+                                          vertical: 12,
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Center(
+                                              child: Image.asset(
+                                                'assets/google.png',
+                                                width: 60,
+                                                height: 60,
+                                              ),
+                                            ),
+                                            Center(
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    'Google Drive',
+                                                    style: TextStyle(
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontFamily:
+                                                          GoogleFonts.poppins()
+                                                              .fontFamily,
+                                                      color: Colors.black,
+                                                    ),
+                                                  ),
+                                                  Image.asset(
+                                                    'assets/cntang.png',
+                                                    width: 16,
+                                                    height: 16,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Text(
+                                              '12.30 PM',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Color(0xffB6B6B6),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Text(
+                                          '- \$20,500',
+                                          style: TextStyle(
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: GoogleFonts.poppins()
+                                                .fontFamily,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.symmetric(
+                                          horizontal: 30,
+                                          vertical: 12,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'CloudOne 10GB',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            Text(
+                                              '\$15,000',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.symmetric(
+                                          horizontal: 30,
+                                          vertical: 12,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Workspace',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            Text(
+                                              '\$500',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.symmetric(
+                                          horizontal: 30,
+                                          vertical: 12,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Stream Maxx',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            Text(
+                                              '\$5,000',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        child: Container(
+                                          height: 45,
+                                          width: 315,
+                                          margin: EdgeInsets.symmetric(
+                                            horizontal: 30,
+                                            vertical: 12,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff5F59E1),
+                                            borderRadius: BorderRadius.circular(
+                                              24,
+                                            ),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'Ok, Close',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w600,
+                                                fontFamily:
+                                                    GoogleFonts.poppins()
+                                                        .fontFamily,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        onTap: () => Navigator.pop(context),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
+                    SizedBox(
+                      height: 12,
+                    ),
                     Text(
-                      'Top Up',
+                      'Transfer',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -174,6 +416,14 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
                       ),
                       child: Center(
                         child: Column(
@@ -182,15 +432,18 @@ class HomePage extends StatelessWidget {
                               height: 34,
                               width: 34,
                               child: Image.asset(
-                                'assets/top_up.png',
+                                'assets/bill.png',
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 12,
+                    ),
                     Text(
-                      'Top Up',
+                      'Bills',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
@@ -202,24 +455,149 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
+            SizedBox(
+              height: 18,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 123,
-                  width: 100,
-                  color: Colors.red,
+                Column(
+                  children: [
+                    Container(
+                      height: 90,
+                      width: 90,
+                      padding: EdgeInsets.all(28),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 34,
+                              width: 34,
+                              child: Image.asset(
+                                'assets/card_bank.png',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Text(
+                      'Widraw',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 123,
-                  width: 100,
-                  color: Colors.red,
+                Column(
+                  children: [
+                    Container(
+                      height: 90,
+                      width: 90,
+                      padding: EdgeInsets.all(28),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 34,
+                              width: 34,
+                              child: Image.asset(
+                                'assets/reward.png',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Text(
+                      'Reward',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 123,
-                  width: 100,
-                  color: Colors.red,
+                Column(
+                  children: [
+                    Container(
+                      height: 90,
+                      width: 90,
+                      padding: EdgeInsets.all(28),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 34,
+                              width: 34,
+                              child: Image.asset(
+                                'assets/nearby.png',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Text(
+                      'Nearby',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -228,12 +606,17 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget bottom() {
+      return Center();
+    }
+
     return Column(
       children: [
         header(),
         card(),
         textMenu(),
         menu(),
+        bottom(),
       ],
     );
   }
