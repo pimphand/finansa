@@ -9,7 +9,7 @@ class Cards extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.symmetric(
-        vertical: 30,
+        vertical: 10,
         horizontal: 24,
       ),
       child: Row(

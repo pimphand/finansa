@@ -41,13 +41,16 @@ class HomePage extends StatelessWidget {
     Widget card() {
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Cards(),
-            Cards(),
-            Cards(),
-          ],
+        child: Container(
+          margin: EdgeInsets.only(bottom: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Cards(),
+              Cards(),
+              Cards(),
+            ],
+          ),
         ),
       );
     }
@@ -56,18 +59,171 @@ class HomePage extends StatelessWidget {
       return Container(
         height: size.height * 0.05,
         margin: EdgeInsets.symmetric(
-          vertical: size.height * 0.02,
+          vertical: 0,
           horizontal: 24,
         ),
-        color: Colors.black,
-        child: Text(
-          "Main Menus",
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-            fontFamily: GoogleFonts.poppins().fontFamily,
-            color: Colors.white,
-          ),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Main Menus",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: GoogleFonts.poppins().fontFamily,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.start,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    Widget menu() {
+      return Container(
+        margin: EdgeInsets.symmetric(
+          horizontal: 24,
+          vertical: 18,
+        ),
+        height: size.height * 0.3,
+        color: Colors.yellow,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      height: 90,
+                      width: 90,
+                      padding: EdgeInsets.all(28),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 34,
+                              width: 34,
+                              child: Image.asset(
+                                'assets/top_up.png',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Top Up',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      height: 90,
+                      width: 90,
+                      padding: EdgeInsets.all(28),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 34,
+                              width: 34,
+                              child: Image.asset(
+                                'assets/top_up.png',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Top Up',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      height: 90,
+                      width: 90,
+                      padding: EdgeInsets.all(28),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 34,
+                              width: 34,
+                              child: Image.asset(
+                                'assets/top_up.png',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Top Up',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 123,
+                  width: 100,
+                  color: Colors.red,
+                ),
+                Container(
+                  height: 123,
+                  width: 100,
+                  color: Colors.red,
+                ),
+                Container(
+                  height: 123,
+                  width: 100,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+          ],
         ),
       );
     }
@@ -77,6 +233,7 @@ class HomePage extends StatelessWidget {
         header(),
         card(),
         textMenu(),
+        menu(),
       ],
     );
   }
